@@ -1,0 +1,44 @@
+/* App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app {
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.page {
+  position: relative;
+  width: 100vw; /* Set width to 100% of viewport width */
+  height: 100vh; /* Set height to 100% of viewport height */
+  overflow: hidden; /* Hide overflow content */
+  transition: transform 0.5s ease; /* Add transition effect */
+}
+
+.active {
+  transform: translateY(0%);
+}
+
+.turned.page { /* Chained class and element selector for higher specificity */
+  transform: rotateY(180deg); /* Rotate the page by 180 degrees */
+  background-color: lightblue; /* Light blue background color when turned */
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the backface of the page during rotation */
+}
+
+.content h1,
+.content p {
+  margin: 20px;
+  color: black; /* Text color */
+}
